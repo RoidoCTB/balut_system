@@ -55,18 +55,6 @@ $user = getCurrentUser();
         </div>
       <?php endif; ?>
 
-     <?php if (in_array($user['role'], ['farmer', 'staff'])): ?>
-  <div class="col-md-3">
-    <div class="card border-success">
-      <div class="card-header bg-success text-white">Incubator</div>
-      <div class="card-body">
-        <p>Track egg batches and incubation progress.</p>
-        <a href="incubator.php" class="btn btn-outline-success w-100">View Incubator</a>
-      </div>
-    </div>
-  </div>
-<?php endif; ?>
-
 <?php if (in_array($user['role'], ['farmer', 'vendor', 'staff'])): ?>
   <div class="col-md-3">
     <div class="card border-success">
