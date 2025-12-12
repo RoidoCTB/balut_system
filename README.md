@@ -69,12 +69,16 @@ A comprehensive PHP and MySQL-based system for managing a balut business, includ
 ## Default Login Credentials
 
 ### Admin Account
-- **Username:** admin
-- **Password:** admin123
+- **Username:** farmer123
+- **Password:** farmer123
 
 ### Vendor Account
-- **Username:** vendor  
+- **Username:** vendor123
 - **Password:** vendor123
+
+### Staff Account
+- **Username:** staff123
+- **Password:** staff123
 
 ## Database Schema
 

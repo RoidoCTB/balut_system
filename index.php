@@ -23,7 +23,10 @@ $user = getCurrentUser();
   <main class="container my-5">
     <div class="row g-4">
 
+      <!-- FARMER CARDS -->
       <?php if ($user['role'] === 'farmer'): ?>
+
+        <!-- Manage Ducks -->
         <div class="col-md-3">
           <div class="card border-success">
             <div class="card-header bg-success text-white">Manage Ducks</div>
@@ -34,6 +37,7 @@ $user = getCurrentUser();
           </div>
         </div>
 
+        <!-- Feed Calculator -->
         <div class="col-md-3">
           <div class="card border-success">
             <div class="card-header bg-success text-white">Feed Calculator</div>
@@ -44,6 +48,10 @@ $user = getCurrentUser();
           </div>
         </div>
 
+      <?php endif; ?>
+
+      <!-- INCUBATOR CARD (farmer + staff) -->
+      <?php if (in_array($user['role'], ['farmer', 'staff'])): ?>
         <div class="col-md-3">
           <div class="card border-success">
             <div class="card-header bg-success text-white">Incubator</div>
@@ -55,18 +63,18 @@ $user = getCurrentUser();
         </div>
       <?php endif; ?>
 
-<?php if (in_array($user['role'], ['farmer', 'vendor', 'staff'])): ?>
-  <div class="col-md-3">
-    <div class="card border-success">
-      <div class="card-header bg-success text-white">Record Sales</div>
-      <div class="card-body">
-        <p>Log sales transactions from vendors and staff.</p>
-        <a href="record-sales.php" class="btn btn-outline-success w-100">Record Sale</a>
-      </div>
-    </div>
-  </div>
-<?php endif; ?>
-
+      <!-- RECORD SALES CARD (farmer + vendor + staff) -->
+      <?php if (in_array($user['role'], ['farmer', 'vendor', 'staff'])): ?>
+        <div class="col-md-3">
+          <div class="card border-success">
+            <div class="card-header bg-success text-white">Record Sales</div>
+            <div class="card-body">
+              <p>Log sales transactions from vendors and staff.</p>
+              <a href="record-sales.php" class="btn btn-outline-success w-100">Record Sale</a>
+            </div>
+          </div>
+        </div>
+      <?php endif; ?>
 
     </div>
   </main>
